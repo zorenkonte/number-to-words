@@ -8,7 +8,7 @@ package main;
  * Project: Number To Words
  * "Talk is Cheap, Show me the Code" - Linus Torvalds
  */
-public class NumberToWords {
+public class Number {
 
     private final String[] ones = {"one", "two", "three", "four",
             "five", "six", "seven", "eight",
