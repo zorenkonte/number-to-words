@@ -4,7 +4,7 @@ public final class Utility {
     private Utility() {
     }
 
-    public static String separator(String s) {
-        return s.isEmpty() ? "" : ",";
+    public static String separator(String s, String c) {
+        return s.isEmpty() ? "" : c;
     }
 }
