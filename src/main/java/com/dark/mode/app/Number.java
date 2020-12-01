@@ -1,6 +1,9 @@
 package main.java.com.dark.mode.app;
 
+import main.java.com.dark.mode.utility.Utility;
+
 import static main.java.com.dark.mode.dictionary.Dictionary.*;
+import static main.java.com.dark.mode.utility.Utility.convertCase;
 import static main.java.com.dark.mode.utility.Utility.separator;
 
 /**
@@ -14,23 +17,33 @@ import static main.java.com.dark.mode.utility.Utility.separator;
 public class Number {
 
     private String convertedWord;
+    private Utility.LetterCase letterCase = Utility.LetterCase.LOWER_CASE;
 
     public Number() {
     }
 
     public Number(long number) {
-        convertedWord = toWords(number);
+        setNumber(number);
+    }
+
+    public Number(long number, Utility.LetterCase letterCase) {
+        this(number);
+        this.letterCase = letterCase;
     }
 
     public void setNumber(long number) {
         convertedWord = toWords(number);
     }
 
+    public void setLetterCase(Utility.LetterCase letterCase) {
+        this.letterCase = letterCase;
+    }
+
     public String getConvertedWord() {
         if (convertedWord == null || convertedWord.equals("")) {
             throw new IllegalArgumentException("value must not be zero or null");
         }
-        return convertedWord;
+        return convertCase(letterCase, convertedWord);
     }
 
     private String toWords(long n) {
