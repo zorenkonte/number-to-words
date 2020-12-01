@@ -6,6 +6,6 @@ public class Main {
     public static void main(String[] args) {
         long num = 912_231_532_123_123L;
         Number number = new Number();
-        System.out.printf("%s -> %s \n", num, number.toWords(num));
+        System.out.println(number);
     }
 }
