@@ -57,6 +57,10 @@ public final class Utility {
         return wordCase;
     }
 
+    public static String stringFormat(String format, Object... values) {
+        return String.format(format, values);
+    }
+
     public enum LetterCase {
         LOWER_CASE,
         UPPER_CASE,

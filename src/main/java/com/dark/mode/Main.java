@@ -5,7 +5,7 @@ import main.java.com.dark.mode.utility.Utility;
 
 public class Main {
     public static void main(String[] args) {
-        Number number = new Number(10000L);
+        Number number = new Number(5123123L);
         number.setLetterCase(Utility.LetterCase.LOWER_CASE);
         System.out.println(number.getConvertedWord());
         number.setLetterCase(Utility.LetterCase.UPPER_CASE);

@@ -3,8 +3,7 @@ package main.java.com.dark.mode.app;
 import main.java.com.dark.mode.utility.Utility;
 
 import static main.java.com.dark.mode.dictionary.Dictionary.*;
-import static main.java.com.dark.mode.utility.Utility.convertCase;
-import static main.java.com.dark.mode.utility.Utility.separator;
+import static main.java.com.dark.mode.utility.Utility.*;
 
 /**
  * Created by DarkModeee
@@ -55,21 +54,21 @@ public class Number {
             word = ONES[Math.toIntExact(n - 1)];
         } else if (n < 100L) { //tens
             var round = toWords(n % 10L);
-            word = String.format("%s%s%s", TENS[Math.toIntExact((n / 10L) - 2)], separator(round, "-"), toWords(n % 10L));
+            word = stringFormat("%s%s%s", TENS[Math.toIntExact((n / 10L) - 2)], separator(round, "-"), toWords(n % 10L));
         } else if (n < 1_000L) { //hundreds
-            word = String.format("%s %s %s", toWords(n / 100L), HUNDREDS[0], toWords(n % 100L));
+            word = stringFormat("%s %s %s", toWords(n / 100L), HUNDREDS[0], toWords(n % 100L));
         } else if (n < 1_000_000L) { //thousands
             var round = toWords(n % 1_000L);
-            word = String.format("%s %s%s %s", toWords(n / 1_000L), HUNDREDS[1], separator(round, ","), round);
+            word = stringFormat("%s %s%s %s", toWords(n / 1_000L), HUNDREDS[1], separator(round, ","), round);
         } else if (n < 1_000_000_000L) { //millions
             var round = toWords(n % 1_000_000L);
-            word = String.format("%s %s%s %s", toWords(n / 1_000_000L), HUNDREDS[2], separator(round, ","), round);
+            word = stringFormat("%s %s%s %s", toWords(n / 1_000_000L), HUNDREDS[2], separator(round, ","), round);
         } else if (n < 1_000_000_000_000L) { //billions
             var round = toWords(n % 1_000_000_000L);
-            word = String.format("%s %s%s %s", toWords(n / 1_000_000_000L), HUNDREDS[3], separator(round, ","), round);
+            word = stringFormat("%s %s%s %s", toWords(n / 1_000_000_000L), HUNDREDS[3], separator(round, ","), round);
         } else if (n < 1_000_000_000_000_000L) { //trillions
             var round = toWords(n % 1_000_000_000_000L);
-            word = String.format("%s %s%s %s", toWords(n / 1_000_000_000_000L), HUNDREDS[4], separator(round, ","), round);
+            word = stringFormat("%s %s%s %s", toWords(n / 1_000_000_000_000L), HUNDREDS[4], separator(round, ","), round);
         } else {
             word = "not supported";
         }
